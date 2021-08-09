@@ -1,5 +1,3 @@
-function esCliProgress(): string {
-  return 'Hello World!';
-}
+import cliProgress from './cliProgress';
 
-export default esCliProgress;
+export { cliProgress };
