@@ -730,6 +730,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@open-tech-world/es-cli-progress@workspace:."
   dependencies:
+    "@open-tech-world/es-cli-styles": ^0.2.0
     "@rollup/plugin-typescript": ^8.2.5
     "@types/jest": ^26.0.24
     "@typescript-eslint/eslint-plugin": ^4.29.0
@@ -745,6 +746,13 @@ __metadata:
     typescript: ^4.3.5
   languageName: unknown
   linkType: soft
+
+"@open-tech-world/es-cli-styles@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@open-tech-world/es-cli-styles@npm:0.2.0"
+  checksum: 1cd28720a520f279dc8c78e8dce4cd474d52ad962892f96a193d30605a7fd7844d093093132ec0f969521d50eb0f0feab4de6e6ee852cb03cbd18c12170a9092
+  languageName: node
+  linkType: hard
 
 "@rollup/plugin-typescript@npm:^8.2.5":
   version: 8.2.5
