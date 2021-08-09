@@ -1,8 +1,8 @@
 {
   "name": "@open-tech-world/es-cli-progress",
   "version": "0.1.0",
-  "description": "",
-  "keywords": [],
+  "description": "CLI Spinner with progress result info.",
+  "keywords": ["cli", "spinner", "progress", "loading", "terminal"],
   "author": {
     "name": "Thanga Ganapathy",
     "email": "ganapathy888@gmail.com",
