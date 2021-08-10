@@ -2,7 +2,13 @@
   "name": "@open-tech-world/es-cli-progress",
   "version": "0.1.0",
   "description": "CLI Spinner with progress result info.",
-  "keywords": ["cli", "spinner", "progress", "loading", "terminal"],
+  "keywords": [
+    "cli",
+    "spinner",
+    "progress",
+    "loading",
+    "terminal"
+  ],
   "author": {
     "name": "Thanga Ganapathy",
     "email": "ganapathy888@gmail.com",
@@ -33,10 +39,11 @@
     "lib"
   ],
   "devDependencies": {
+    "@open-tech-world/rollup-plugin-clean": "^0.12.1",
     "@rollup/plugin-typescript": "^8.2.5",
     "@types/jest": "^26.0.24",
-    "@typescript-eslint/eslint-plugin": "^4.29.0",
-    "@typescript-eslint/parser": "^4.29.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
