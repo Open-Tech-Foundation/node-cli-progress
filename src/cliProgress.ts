@@ -65,7 +65,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render('✔️  ' + this.text + '\n');
+    this.render(style('~green.bold{✔️}  ') + this.text + '\n');
   }
 
   fail(text: string): void {
@@ -75,7 +75,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render('❌ ' + this.text + '\n');
+    this.render(style('~red.bold{❌} ') + this.text + '\n');
   }
 
   warn(text: string): void {
@@ -85,7 +85,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render('⚠️  ' + this.text + '\n');
+    this.render(style('~yellow.bold{⚠️}  ') + this.text + '\n');
   }
 
   info(text: string): void {

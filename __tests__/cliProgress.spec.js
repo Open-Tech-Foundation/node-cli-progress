@@ -23,7 +23,9 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Loading '
     );
-    expect(output).toContain('✔️  Loading \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;46;204;64m✔️\x1B[39;2;m\x1B[39;2;m  Loading \n'
+    );
   });
 
   it('changes default loading to Downloading', async () => {
@@ -36,7 +38,9 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Downloading '
     );
-    expect(output).toContain('✔️  Downloading \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;46;204;64m✔️\x1B[39;2;m\x1B[39;2;m  Downloading \n'
+    );
   });
 
   test('done with text', async () => {
@@ -49,7 +53,9 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Downloading '
     );
-    expect(output).toContain('✔️  Done! \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;46;204;64m✔️\x1B[39;2;m\x1B[39;2;m  Done! \n'
+    );
   });
 
   test('fail', async () => {
@@ -62,7 +68,9 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Loading '
     );
-    expect(output).toContain('❌ Loading \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;255;65;54m❌\x1B[39;2;m\x1B[39;2;m Loading \n'
+    );
   });
 
   it('fails with text', async () => {
@@ -75,7 +83,9 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Loading '
     );
-    expect(output).toContain('❌ Network Error! \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;255;65;54m❌\x1B[39;2;m\x1B[39;2;m Network Error! \n'
+    );
   });
 
   test('warn', async () => {
@@ -88,7 +98,9 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Loading '
     );
-    expect(output).toContain('⚠️  Loading \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;255;220;0m⚠️\x1B[39;2;m\x1B[39;2;m  Loading \n'
+    );
   });
 
   it('warns with text', async () => {
@@ -101,7 +113,9 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Loading '
     );
-    expect(output).toContain('⚠️  Caution! \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;255;220;0m⚠️\x1B[39;2;m\x1B[39;2;m  Caution! \n'
+    );
   });
 
   test('info', async () => {
@@ -147,6 +161,8 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠙\x1B[39;2;m\x1B[39;2;m Searching '
     );
-    expect(output).toContain('✔️  Searching \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;46;204;64m✔️\x1B[39;2;m\x1B[39;2;m  Searching \n'
+    );
   });
 });
