@@ -1,5 +1,5 @@
 {
-  "name": "@open-tech-world/es-cli-progress",
+  "name": "@open-tech-world/node-cli-progress",
   "version": "0.1.0",
   "description": "CLI Spinner with progress result info.",
   "keywords": [
@@ -7,7 +7,8 @@
     "spinner",
     "progress",
     "loading",
-    "terminal"
+    "terminal",
+    "console"
   ],
   "author": {
     "name": "Thanga Ganapathy",
@@ -18,7 +19,7 @@
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/open-tech-world/es-cli-progress.git"
+    "url": "git+https://github.com/open-tech-world/node-cli-progress.git"
   },
   "type": "module",
   "main": "./lib/index.js",

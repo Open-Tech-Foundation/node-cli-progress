@@ -726,9 +726,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@open-tech-world/es-cli-progress@workspace:.":
+"@open-tech-world/node-cli-progress@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@open-tech-world/es-cli-progress@workspace:."
+  resolution: "@open-tech-world/node-cli-progress@workspace:."
   dependencies:
     "@open-tech-world/es-cli-styles": ^0.2.0
     "@open-tech-world/rollup-plugin-clean": ^0.12.1

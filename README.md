@@ -1,4 +1,4 @@
-# @open-tech-world/es-cli-progress
+# @open-tech-world/node-cli-progress
 
 > Description
 
@@ -7,13 +7,13 @@
 Using npm
 
 ```shell
-npm install @open-tech-world/es-cli-progress
+npm install @open-tech-world/node-cli-progress
 ```
 
 Using Yarn
 
 ```shell
-yarn add @open-tech-world/es-cli-progress
+yarn add @open-tech-world/node-cli-progress
 ```
 
 ## License
