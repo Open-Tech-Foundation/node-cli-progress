@@ -21,9 +21,13 @@ class cliProgress {
     }
   }
 
-  start(text: string): void {
-    this.isRunning = true;
-    this.setText(text);
+  private render(text: string): void {
+    if (this.stream.clearLine(0) && this.stream.cursorTo(0)) {
+      this.stream.write(text);
+    }
+  }
+
+  private startSpinner(): void {
     const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
     let currentPosition = 0;
     const intervalInstance = setInterval(() => {
@@ -32,16 +36,22 @@ class cliProgress {
         return;
       }
 
-      this.stream.cursorTo(0);
-      this.stream.write(
+      this.render(
         style('~green.bold{' + frames[currentPosition] + '} ' + this.text)
       );
+
       if (currentPosition === frames.length - 1) {
         currentPosition = 0;
         return;
       }
       currentPosition++;
     }, 100);
+  }
+
+  start(text: string): void {
+    this.isRunning = true;
+    this.setText(text);
+    this.startSpinner();
   }
 
   update(text: string): void {
@@ -55,10 +65,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-
-    if (this.stream.clearLine(0) && this.stream.cursorTo(0)) {
-      this.stream.write('✔️  ' + this.text + '\n');
-    }
+    this.render('✔️  ' + this.text + '\n');
   }
 
   fail(text: string): void {
@@ -68,10 +75,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-
-    if (this.stream.clearLine(0) && this.stream.cursorTo(0)) {
-      this.stream.write('❌ ' + this.text + '\n');
-    }
+    this.render('❌ ' + this.text + '\n');
   }
 
   warn(text: string): void {
@@ -81,10 +85,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-
-    if (this.stream.clearLine(0) && this.stream.cursorTo(0)) {
-      this.stream.write('⚠️  ' + this.text + '\n');
-    }
+    this.render('⚠️  ' + this.text + '\n');
   }
 
   info(text: string): void {
@@ -94,10 +95,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-
-    if (this.stream.clearLine(0) && this.stream.cursorTo(0)) {
-      this.stream.write('ℹ️  ' + this.text + '\n');
-    }
+    this.render(style('~aqua{ℹ️}  ') + this.text + '\n');
   }
 }
 
