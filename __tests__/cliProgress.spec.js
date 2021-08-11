@@ -128,7 +128,9 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Loading '
     );
-    expect(output).toContain('\x1B[38;2;127;219;255mℹ️\x1B[39;2;m  Loading \n');
+    expect(output).toContain(
+      '\x1B[1;38;2m\x1B[38;2;127;219;255mℹ️\x1B[39;2;m\x1B[39;2;m  Loading \n'
+    );
   });
 
   test('info with text', async () => {
@@ -142,7 +144,7 @@ describe('cliProgress', () => {
       '\x1B[1;38;2m\x1B[38;2;46;204;64m⠋\x1B[39;2;m\x1B[39;2;m Loading '
     );
     expect(output).toContain(
-      '\x1B[38;2;127;219;255mℹ️\x1B[39;2;m  Some usefull info \n'
+      '\x1B[1;38;2m\x1B[38;2;127;219;255mℹ️\x1B[39;2;m\x1B[39;2;m  Some usefull info \n'
     );
   });
 

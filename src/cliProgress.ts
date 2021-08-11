@@ -95,7 +95,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(style('~aqua{ℹ️}  ') + this.text + '\n');
+    this.render(style('~aqua.bold{ℹ️}  ') + this.text + '\n');
   }
 }
 
