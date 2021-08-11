@@ -1,4 +1,4 @@
-import { cliProgress } from '../lib/index.js';
+import { cliProgress } from '../lib/index.esm.js';
 import { jest } from '@jest/globals';
 
 async function sleep(ms) {

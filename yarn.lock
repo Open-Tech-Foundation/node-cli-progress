@@ -726,24 +726,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@open-tech-world/es-cli-styles@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@open-tech-world/es-cli-styles@npm:0.2.0"
-  checksum: 1cd28720a520f279dc8c78e8dce4cd474d52ad962892f96a193d30605a7fd7844d093093132ec0f969521d50eb0f0feab4de6e6ee852cb03cbd18c12170a9092
+"@open-tech-world/es-cli-styles@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@open-tech-world/es-cli-styles@npm:0.3.0"
+  checksum: 7695bb397c77809ecd9fa4d5d4f1f9c658c461f6ac4514ce9e4e2d4cf0755feee6db58a6c79dde720e96fbd85126530bd2e6ba86bc5b65a4a5f442276c2f9ac2
   languageName: node
   linkType: hard
 
-"@open-tech-world/es-glob@npm:^0.7.0":
-  version: 0.7.0
-  resolution: "@open-tech-world/es-glob@npm:0.7.0"
-  checksum: ac3dcef46492e563c7ff4982290df2cad3a9cfcbba170092ec5a6cfbff1b865399aa8acea286d300e6c5435015fecdf064632c98cf0d4f7e88ccd8675904a4f9
+"@open-tech-world/es-glob@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "@open-tech-world/es-glob@npm:0.8.1"
+  checksum: 7d98eadb8914e1270f438e9669a87e30e8ecb67d2bf8341131472b01bbe9e13b0c6be1896e5f043bfa61a33e14fedbf2cd4b9b2aff546b19a195e0feba0e0628
   languageName: node
   linkType: hard
 
-"@open-tech-world/es-utils@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "@open-tech-world/es-utils@npm:0.6.0"
-  checksum: a51ebfc5ade97be2b434d458951dd529dd9ba1c468750c247f2ef698706d9ff382d659a613424d0aeefe05ab97c39db10a93c77e3912c4978411e8a2d4d28fcf
+"@open-tech-world/es-utils@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "@open-tech-world/es-utils@npm:0.8.0"
+  checksum: 3954f9653ff1777ae8e5170be6512113c957f988fb41182164f1ed59097cdc3f919fa4546eb2fa8d0ce89e27baa0abd8d0301190b27c99f9f70fa1a5db862e34
   languageName: node
   linkType: hard
 
@@ -751,10 +751,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@open-tech-world/node-cli-progress@workspace:."
   dependencies:
-    "@open-tech-world/es-cli-styles": ^0.2.0
-    "@open-tech-world/rollup-plugin-clean": ^0.12.1
+    "@open-tech-world/es-cli-styles": ^0.3.0
+    "@open-tech-world/rollup-plugin-clean": ^0.13.0
     "@rollup/plugin-typescript": ^8.2.5
-    "@types/jest": ^26.0.24
+    "@types/jest": ^27.0.0
     "@typescript-eslint/eslint-plugin": ^4.29.1
     "@typescript-eslint/parser": ^4.29.1
     cross-env: ^7.0.3
@@ -764,37 +764,37 @@ __metadata:
     eslint-plugin-prettier: ^3.4.0
     jest: ^27.0.6
     prettier: ^2.3.2
-    rollup: ^2.56.1
+    rollup: ^2.56.2
     typescript: ^4.3.5
   languageName: unknown
   linkType: soft
 
-"@open-tech-world/node-glob@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@open-tech-world/node-glob@npm:0.3.0"
+"@open-tech-world/node-glob@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@open-tech-world/node-glob@npm:0.4.0"
   dependencies:
-    "@open-tech-world/es-glob": ^0.7.0
-    "@open-tech-world/es-utils": ^0.6.0
-  checksum: c6e187a4c62416cec46d5a81ae2885b0e8f3b559d66a56dbc295b96f2439cd46f7ca75d9206dd6962c22e8287040044e1a5ecba2c585544efff6b71b0492b2e2
+    "@open-tech-world/es-glob": ^0.8.1
+    "@open-tech-world/es-utils": ^0.8.0
+  checksum: 62072d8cbc7ef29d3146aa1ad7cf43c9ba45e84277dd3870b874465f962c9d21d829ce85bd0e12ce9a77ff8dbad00d951e5291e73794bd3f688ff7c4b66c3ae7
   languageName: node
   linkType: hard
 
-"@open-tech-world/node-rm@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@open-tech-world/node-rm@npm:0.2.0"
+"@open-tech-world/node-rm@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@open-tech-world/node-rm@npm:0.5.0"
   dependencies:
-    "@open-tech-world/es-cli-styles": ^0.2.0
-    "@open-tech-world/node-glob": ^0.3.0
-  checksum: cb14fc3665aa5ad2185b030c6b0601fb501b02246504d3e22749f422a8217f392a70236f7359cc8e44ed7ce3f7ce43a63fb6353ffb25aaa7839f98d4d1909c30
+    "@open-tech-world/es-cli-styles": ^0.3.0
+    "@open-tech-world/node-glob": ^0.4.0
+  checksum: eb71c16af1a2161d6a112831942721b8933e55d27fe2d36a8bc221189099abfa3480c7b9a579b87b1e141a60475225e8102fb39dafab28fa152537e2bd816099
   languageName: node
   linkType: hard
 
-"@open-tech-world/rollup-plugin-clean@npm:^0.12.1":
-  version: 0.12.1
-  resolution: "@open-tech-world/rollup-plugin-clean@npm:0.12.1"
+"@open-tech-world/rollup-plugin-clean@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "@open-tech-world/rollup-plugin-clean@npm:0.13.0"
   dependencies:
-    "@open-tech-world/node-rm": ^0.2.0
-  checksum: 11cb7737eea15c5d8a463c7e89601755e8c87c57491a5275f93a43238ae6da7e09b08a3f9565eb36c5f74fbf87b1220f53c2f7fb416c3b29f9fb500268774e0a
+    "@open-tech-world/node-rm": ^0.5.0
+  checksum: 813a4bf2d127ac04fe8f8f69707a94cf2faf679651d5f986d2779d6ba14513ba8c2d0253d18c05b577dce151392d24342146492eba92a9c7d13806036a820efa
   languageName: node
   linkType: hard
 
@@ -932,13 +932,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^26.0.24":
-  version: 26.0.24
-  resolution: "@types/jest@npm:26.0.24"
+"@types/jest@npm:^27.0.0":
+  version: 27.0.0
+  resolution: "@types/jest@npm:27.0.0"
   dependencies:
     jest-diff: ^26.0.0
     pretty-format: ^26.0.0
-  checksum: ae39675412f08d884926254e9b12bfd2b5a4e4d204c94d3148cb942174a474930d0c60540133c968f22241d4712b7940c96cbc883096eb326a4d5b206fb78bd0
+  checksum: bb894a1fcc0e244ecefdf2b43ed786c0354c416d00e433155bf68569d0d8a45b012b008fbe6673890903b785076b9a34f128c7095e1b25f4481f3d2a76c7495f
   languageName: node
   linkType: hard
 
@@ -4263,9 +4263,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.56.1":
-  version: 2.56.1
-  resolution: "rollup@npm:2.56.1"
+"rollup@npm:^2.56.2":
+  version: 2.56.2
+  resolution: "rollup@npm:2.56.2"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -4273,7 +4273,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 494f3e17398a9590d7938ec8b1c1b72682e0bdb4b9e5f997f9fb09457d16b5fbb62495031ab365ae686b9545602e496939337fad4f82bd7cc4dee157b3312231
+  checksum: 4e8e13c5c43147de142ae2f294f775b1cc567d2f5c196b28a37482d886fb0cabef769c18e427ab0180f5929b8422b27a7664a5e4586be38651871c62e333b8ee
   languageName: node
   linkType: hard
 
