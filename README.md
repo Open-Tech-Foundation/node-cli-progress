@@ -37,7 +37,7 @@ progress.done('Download completed!');
 
 ## API
 
-`new cliProgress(stream?: NodeJS.WriteStream)`
+**new cliProgress(stream?: NodeJS.WriteStream)**
 
 It creates a new instance of the cliProgress. 
 
