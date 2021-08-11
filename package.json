@@ -1,7 +1,7 @@
 {
   "name": "@open-tech-world/node-cli-progress",
   "version": "0.1.0",
-  "description": "CLI Spinner with progress result info.",
+  "description": "CLI spinner with task progress result.",
   "keywords": [
     "cli",
     "spinner",
