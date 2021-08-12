@@ -65,7 +65,9 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(style('~green.bold{✔️}  ') + this.text + '\n');
+    this.render(
+      style('~green.bold{\u{2714}\u{FE0F}}') + '  ' + this.text + '\n'
+    );
   }
 
   fail(text: string): void {
@@ -75,7 +77,7 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(style('~red.bold{❌} ') + this.text + '\n');
+    this.render(style('~red.bold{\u{274C}\u{FE0F}}') + ' ' + this.text + '\n');
   }
 
   warn(text: string): void {
@@ -85,7 +87,9 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(style('~yellow.bold{⚠️}  ') + this.text + '\n');
+    this.render(
+      style('~yellow.bold{\u{26A0}\u{FE0F}}') + '  ' + this.text + '\n'
+    );
   }
 
   info(text: string): void {
@@ -95,7 +99,9 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(style('~aqua.bold{ℹ️}  ') + this.text + '\n');
+    this.render(
+      style('~aqua.bold{\u{2139}\u{FE0F}}') + '  ' + this.text + '\n'
+    );
   }
 }
 

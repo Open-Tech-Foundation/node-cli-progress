@@ -1,4 +1,4 @@
-import { cliProgress } from './lib/index.js';
+import { cliProgress } from './lib/index.esm.js';
 
 async function sleep(ms) {
   return new Promise((resolve) => {
