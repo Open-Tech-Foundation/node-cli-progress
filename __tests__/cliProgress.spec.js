@@ -251,4 +251,27 @@ describe('cliProgress', () => {
     expect(output[0]).toContain('\u{2B50} Loading\n');
     expect(output[1]).toContain('\u{2139} Downloaded files: 10 \n');
   });
+
+  it('does not throw any errors', async () => {
+    const p1 = new cliProgress();
+    expect(() => p1.start()).not.toThrow();
+    expect(() => p1.done()).not.toThrow();
+
+    const p2 = new cliProgress();
+    expect(() => p2.start()).not.toThrow();
+    expect(() => p2.update('Updated text')).not.toThrow();
+    expect(() => p2.done()).not.toThrow();
+
+    const p3 = new cliProgress();
+    expect(() => p3.start()).not.toThrow();
+    expect(() => p3.fail()).not.toThrow();
+
+    const p4 = new cliProgress();
+    expect(() => p4.start()).not.toThrow();
+    expect(() => p4.warn()).not.toThrow();
+
+    const p5 = new cliProgress();
+    expect(() => p5.start()).not.toThrow();
+    expect(() => p5.info()).not.toThrow();
+  });
 });
