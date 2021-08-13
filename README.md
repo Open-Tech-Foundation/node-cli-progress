@@ -1,6 +1,7 @@
 <div align="center">
 
 # @open-tech-world/node-cli-progress
+[![Build](https://github.com/open-tech-world/node-cli-progress/actions/workflows/build.yml/badge.svg)](https://github.com/open-tech-world/node-cli-progress/actions/workflows/build.yml) [![CodeFactor](https://www.codefactor.io/repository/github/open-tech-world/node-cli-progress/badge)](https://www.codefactor.io/repository/github/open-tech-world/node-cli-progress)
 
 ![](demo.gif)
 
