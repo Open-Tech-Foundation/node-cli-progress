@@ -7,7 +7,7 @@ class cliProgress {
   private text: string;
   private tty;
 
-  constructor(options: IOptions) {
+  constructor(options?: Partial<IOptions>) {
     this.stream = (options && options.stream) || process.stderr;
     this.tty = this.stream.isTTY;
     this.isRunning = false;

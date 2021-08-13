@@ -38,11 +38,16 @@ progress.done('Download completed!');
 
 ## API
 
-**new cliProgress({ stream?: NodeJS.WriteStream })**
+**new cliProgress(Partial\<IOptions\>)**
 
 It creates a new instance of the cliProgress. 
 
-Default `stream` is `process.stderr`.
+options:
+
+| Name | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| stream | NodeJS.WriteStream | process.stderr | The stream to use.
+
 
 #### Instance methods:
 
