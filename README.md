@@ -38,7 +38,7 @@ progress.done('Download completed!');
 
 ## API
 
-**new cliProgress(stream?: NodeJS.WriteStream)**
+**new cliProgress({ stream?: NodeJS.WriteStream })**
 
 It creates a new instance of the cliProgress. 
 
@@ -49,6 +49,8 @@ Default `stream` is `process.stderr`.
 **start(text?: string)**
 
 This method starts the spinner with optional `text`.
+
+The default text is `Loading`.
 
 **update(text: string)**
 
