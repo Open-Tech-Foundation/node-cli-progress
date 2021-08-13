@@ -2,11 +2,11 @@ import { PassThrough } from 'stream';
 
 import { cliProgress } from '../lib/index.esm.js';
 
-function getStream() {
+function getStream(isTTY = true) {
   const stream = new PassThrough();
   stream.clearLine = () => true;
   stream.cursorTo = () => true;
-  stream.isTTY = true;
+  stream.isTTY = isTTY;
 
   return stream;
 }
@@ -33,10 +33,10 @@ async function getOutput(stream) {
   });
 }
 
-async function run(cb) {
-  const stream = getStream();
+async function run(cb, isTTY = true) {
+  const stream = getStream(isTTY);
   const outputPromise = getOutput(stream);
-  const progress = new cliProgress(stream);
+  const progress = new cliProgress({ stream: stream });
   await cb(progress);
   stream.end();
 
@@ -197,5 +197,58 @@ describe('cliProgress', () => {
     expect(output).toContain(
       '\x1B[1;38;2m\x1B[38;2;46;204;64m\u{2714}\u{FE0F}\x1B[39;2;m\x1B[39;2;m  Searching \n'
     );
+  });
+
+  test('non interactive stream default loading', async () => {
+    const output = await run(async (progress) => {
+      progress.start();
+      await sleep(100);
+      progress.done();
+    }, false);
+    expect(output[0]).toContain('\u{2B50} Loading\n');
+    expect(output[1]).toContain('\u{2714} Loading \n');
+  });
+
+  test('non interactive stream with update', async () => {
+    const output = await run(async (progress) => {
+      progress.start();
+      await sleep(100);
+      progress.update('Installing');
+      await sleep(100);
+      progress.done('Installed!');
+    }, false);
+    expect(output[0]).toContain('\u{2B50} Loading\n');
+    expect(output[1]).toContain('\u{2B50} Installing \n');
+    expect(output[2]).toContain('\u{2714} Installed! \n');
+  });
+
+  test('non interactive stream fail', async () => {
+    const output = await run(async (progress) => {
+      progress.start();
+      await sleep(100);
+      progress.fail('Failed!');
+    }, false);
+    expect(output[0]).toContain('\u{2B50} Loading\n');
+    expect(output[1]).toContain('\u{274C} Failed! \n');
+  });
+
+  test('non interactive stream that warns', async () => {
+    const output = await run(async (progress) => {
+      progress.start();
+      await sleep(100);
+      progress.warn();
+    }, false);
+    expect(output[0]).toContain('\u{2B50} Loading\n');
+    expect(output[1]).toContain('\u{26A0} Loading \n');
+  });
+
+  test('non interactive stream with info', async () => {
+    const output = await run(async (progress) => {
+      progress.start();
+      await sleep(100);
+      progress.info('Downloaded files: 10');
+    }, false);
+    expect(output[0]).toContain('\u{2B50} Loading\n');
+    expect(output[1]).toContain('\u{2139} Downloaded files: 10 \n');
   });
 });

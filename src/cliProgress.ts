@@ -1,14 +1,17 @@
 import { style } from '@open-tech-world/es-cli-styles';
+import IOptions from './IOptions';
 
 class cliProgress {
   private stream: NodeJS.WriteStream;
   private isRunning: boolean;
   private text: string;
+  private tty;
 
-  constructor(stream: NodeJS.WriteStream) {
-    this.stream = stream || process.stderr;
+  constructor(options: IOptions) {
+    this.stream = (options && options.stream) || process.stderr;
+    this.tty = this.stream.isTTY;
     this.isRunning = false;
-    this.text = 'Loading ';
+    this.text = '';
   }
 
   private setText(text: string): void {
@@ -22,9 +25,14 @@ class cliProgress {
   }
 
   private render(text: string): void {
-    if (this.stream.clearLine(0) && this.stream.cursorTo(0)) {
-      this.stream.write(text);
+    if (this.tty) {
+      if (this.stream.clearLine(0) && this.stream.cursorTo(0)) {
+        this.stream.write(text);
+      }
+      return;
     }
+
+    this.stream.write(text);
   }
 
   private startSpinner(): void {
@@ -49,13 +57,25 @@ class cliProgress {
   }
 
   start(text: string): void {
+    if (this.isRunning) {
+      return;
+    }
+
     this.isRunning = true;
-    this.setText(text);
-    this.startSpinner();
+    this.setText(text || 'Loading');
+    if (this.tty) {
+      this.startSpinner();
+      return;
+    }
+
+    this.render('\u{2B50} Loading\n');
   }
 
   update(text: string): void {
     this.setText(text);
+    if (this.isRunning && !this.tty) {
+      this.render('\u{2B50} ' + this.text + '\n');
+    }
   }
 
   done(text: string): void {
@@ -65,9 +85,15 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(
-      style('~green.bold{\u{2714}\u{FE0F}}') + '  ' + this.text + '\n'
-    );
+
+    if (this.tty) {
+      this.render(
+        style('~green.bold{\u{2714}\u{FE0F}}') + '  ' + this.text + '\n'
+      );
+      return;
+    }
+
+    this.render('\u{2714} ' + this.text + '\n');
   }
 
   fail(text: string): void {
@@ -77,7 +103,15 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(style('~red.bold{\u{274C}\u{FE0F}}') + ' ' + this.text + '\n');
+
+    if (this.tty) {
+      this.render(
+        style('~red.bold{\u{274C}\u{FE0F}}') + ' ' + this.text + '\n'
+      );
+      return;
+    }
+
+    this.render('\u{274C} ' + this.text + '\n');
   }
 
   warn(text: string): void {
@@ -87,9 +121,15 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(
-      style('~yellow.bold{\u{26A0}\u{FE0F}}') + '  ' + this.text + '\n'
-    );
+
+    if (this.tty) {
+      this.render(
+        style('~yellow.bold{\u{26A0}\u{FE0F}}') + '  ' + this.text + '\n'
+      );
+      return;
+    }
+
+    this.render('\u{26A0} ' + this.text + '\n');
   }
 
   info(text: string): void {
@@ -99,9 +139,14 @@ class cliProgress {
 
     this.setText(text);
     this.isRunning = false;
-    this.render(
-      style('~aqua.bold{\u{2139}\u{FE0F}}') + '  ' + this.text + '\n'
-    );
+    if (this.tty) {
+      this.render(
+        style('~aqua.bold{\u{2139}\u{FE0F}}') + '  ' + this.text + '\n'
+      );
+      return;
+    }
+
+    this.render('\u{2139} ' + this.text + '\n');
   }
 }
 
